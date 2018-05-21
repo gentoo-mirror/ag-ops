@@ -12,3 +12,6 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
+
+CHOST_amd64=x86_64-unknown-linux-gnu
+CHOST_x86=i686-unknown-linux-gnu
