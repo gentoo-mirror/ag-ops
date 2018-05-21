@@ -1,4 +1,4 @@
-DEFINED_PHASES=-
+DEFINED_PHASES=install prepare
 DESCRIPTION=Optional kernel module for sys-process/atop to gather statistics about TCP/UDP packets transmitted/received per process and per thread
 EAPI=6
 HOMEPAGE=http://www.atoptool.nl/netatop.php
@@ -6,4 +6,4 @@ KEYWORDS=~amd64 ~x86
 LICENSE=GPL-2
 SLOT=0
 SRC_URI=http://www.atoptool.nl/download/netatop-2.0.tar.gz
-_md5_=11ee135e376d86e0db14517361ab94e8
+_md5_=31f0c9ab25f4cf39c0b98a00375519e8
