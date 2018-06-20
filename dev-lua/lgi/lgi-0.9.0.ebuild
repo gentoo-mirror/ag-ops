@@ -29,10 +29,7 @@ DEPEND="${RDEPEND}
 		)"
 
 src_prepare() {
-	sed -i \
-		-e "s:^LUA_LIBDIR.*$:LUA_LIBDIR = $($(tc-getPKG_CONFIG) --variable INSTALL_CMOD lua):" \
-		-e "s:^LUA_SHAREDIR.*$:LUA_SHAREDIR = $($(tc-getPKG_CONFIG) --variable INSTALL_LMOD lua):" \
-		"${S}"/lgi/Makefile || die "sed failed"
+	default
 }
 
 src_compile() {
@@ -41,12 +38,11 @@ src_compile() {
 
 src_test() {
 	virtx emake CC="$(tc-getCC)" COPTFLAGS="-Wall -Wextra ${CFLAGS}" LIBFLAG="-shared ${LDFLAGS}" check
-	assert
 }
 
 src_install() {
 	emake DESTDIR="${D}" install
-	dohtml -r docs/*
+	dodoc -r docs/*
 	dodoc README.md
 	if use examples; then
 		dodoc -r samples
