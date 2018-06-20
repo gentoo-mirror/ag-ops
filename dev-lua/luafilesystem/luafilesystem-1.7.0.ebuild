@@ -21,17 +21,15 @@ RDEPEND="
 DEPEND="${RDEPEND}
 	virtual/pkgconfig"
 
+PATCHES="${FILESDIR}/${P}.patch"
+
 HTML_DOCS=( doc/us )
 
 S="${WORKDIR}/${PN}-${MY_PV}"
 
 src_prepare() {
 	default
-
-	sed -i \
-		-e "s|-O2|${CFLAGS}|" \
-		-e "/^LIB_OPTION/s|= |= ${LDFLAGS} |" \
-		config || die
+	eapply_user
 }
 
 src_compile() {
