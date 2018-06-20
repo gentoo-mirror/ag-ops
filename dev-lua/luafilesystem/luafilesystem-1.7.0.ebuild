@@ -42,10 +42,3 @@ src_test() {
 	LUA_CPATH=./src/?.so $(usex luajit 'luajit' 'lua') tests/test.lua
 }
 
-src_install() {
-	emake \
-		LUA_LIBDIR="${ED%/}$($(tc-getPKG_CONFIG) --variable INSTALL_CMOD $(usex luajit 'luajit' 'lua'))" \
-		install
-
-	einstalldocs
-}
