@@ -15,7 +15,7 @@ KEYWORDS="amd64 ~arm ~ppc ~ppc64 ~x86 ~x86-fbsd"
 IUSE="dbus doc elibc_FreeBSD gnome luajit test"
 
 RDEPEND="
-	>=dev-lang/lua-5.1:0
+	>=dev-lang/lua-5.1:*
 	luajit? ( dev-lang/luajit:2 )
 	dev-libs/glib:2
 	>=dev-libs/libxdg-basedir-1
