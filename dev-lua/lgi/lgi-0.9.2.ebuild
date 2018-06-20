@@ -5,8 +5,8 @@ EAPI=6
 
 VIRTUALX_REQUIRED="manual"
 
-# inherit eutils toolchain-funcs flag-o-matic virtualx
-inherit eutils toolchain-funcs virtualx
+inherit eutils toolchain-funcs flag-o-matic virtualx
+# inherit eutils toolchain-funcs virtualx
 
 DESCRIPTION="Lua bindings using gobject-introspection"
 HOMEPAGE="https://github.com/pavouk/lgi"
