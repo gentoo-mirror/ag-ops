@@ -24,6 +24,7 @@ RDEPEND="${COMMON_DEPEND}
 S="${WORKDIR}/Penlight-${PV}"
 
 src_install() {
-	insinto "$($(tc-getPKG_CONFIG) --variable INSTALL_LMOD lua)"
+	LUA_VERSION=$(readlink -e "${EROOT}"/usr/bin/lua | sed -ne 's:.*/usr/bin/lua\([\d.-]*\):\1:p')
+	insinto "$($(tc-getPKG_CONFIG) --variable INSTALL_LMOD lua)/$LUA_VERSION"
 	doins -r lua/pl
 }
