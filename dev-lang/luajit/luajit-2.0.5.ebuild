@@ -19,7 +19,7 @@ S="${WORKDIR}/${MY_P}"
 
 # LUA_VERSION=$(readlink -e "${EROOT}"/usr/bin/lua | sed -ne 's:.*/usr/bin/lua\([\d.-]*\):\1:p')
 
-HTML_DOCS=( doc/* )
+HTML_DOCS=( doc/ )
 PATCHES=( "${FILESDIR}"/${PN}-luaver.patch )
 
 src_install(){
