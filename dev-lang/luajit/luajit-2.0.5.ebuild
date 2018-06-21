@@ -12,7 +12,6 @@ DESCRIPTION="Just-In-Time Compiler for the Lua programming language"
 HOMEPAGE="http://luajit.org/"
 SRC_URI="http://luajit.org/download/${MY_P}.tar.gz"
 LICENSE="MIT"
-# this should probably be pkgmoved to 2.0 for sake of consistency.
 SLOT="2.0.5"
 KEYWORDS="~amd64 ~arm ~ppc ~x86 ~amd64-linux ~x86-linux"
 
@@ -21,12 +20,7 @@ S="${WORKDIR}/${MY_P}"
 # LUA_VERSION=$(readlink -e "${EROOT}"/usr/bin/lua | sed -ne 's:.*/usr/bin/lua\([\d.-]*\):\1:p')
 
 HTML_DOCS=( doc/* )
-PATCHES=( "${FILESDIR}"/${P}.patch )
-
-src_prepare(){
-	default
-	eapply_user
-}
+PATCHES=( "${FILESDIR}"/${PN}-luaver.patch )
 
 src_install(){
 	default
