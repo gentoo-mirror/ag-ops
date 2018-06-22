@@ -46,6 +46,10 @@ src_prepare() {
 		eapply "${FILESDIR}"/${PN}-5.1.30-udp.patch
 	fi
 
+	if kernel_is -ge 4 17 0 ; then
+		eapply "${FILESDIR}"/${PN}-kver-4.17.patch
+	fi
+
 	default
 }
 
