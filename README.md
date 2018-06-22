@@ -23,4 +23,11 @@ This assumes that you have installed the `app-eselect/eselect-repository` packag
 | Count | Category/Name       | Description                    |
 |-------|------------|--------------------------------|
 | 1     | `sys-process/netatop`   | Optional kernel module for `atop` to gather statistics about TCP/UDP packets transmitted/received per process and per thread  |
+| 2     | `dev-lua/ldoc`   | A LuaDoc-compatible documentation generation system	|
+| 3     | `dev-lua/lgi`   | Lua bindings using gobject-introspection	|
+| 4     | `dev-lua/luafilesystem`   | File System Library for the Lua Programming Language	|
+| 5     | `dev-lua/luaposix`   | Bindings for POSIX APIs	|
+| 6     | `dev-lua/penlight`   | Lua utility libraries loosely based on the Python standard libraries	|
+| 7     | `dev-lua/say`   | Lua String Hashing/Indexing Library 	|
+| 8     | `net-irc/weechat`   | Portable and multi-interface IRC client		|
 
