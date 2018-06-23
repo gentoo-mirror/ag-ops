@@ -1,7 +1,7 @@
-diff --git a/linux/VBoxPci-linux.c b/linux/VBoxPci-linux.c
+diff --git a/work/vboxpci/linux/VBoxPci-linux.c b/work/vboxpci/linux/VBoxPci-linux.c
 index e361ef3..e53858f 100644
---- a/linux/VBoxPci-linux.c
-+++ b/linux/VBoxPci-linux.c
+--- a/work/vboxpci/linux/VBoxPci-linux.c
++++ b/work/vboxpci/linux/VBoxPci-linux.c
 @@ -80,7 +80,15 @@ MODULE_VERSION(VBOX_VERSION_STRING " r" RT_XSTR(VBOX_SVN_REV));
  #if LINUX_VERSION_CODE >= KERNEL_VERSION(2, 6, 20)
  # define PCI_DEV_GET(v,d,p)            pci_get_device(v,d,p)
