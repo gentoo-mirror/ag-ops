@@ -10,6 +10,7 @@ dev-vcs/git 2.16.4: stupid content tracker: distributed VCS designed for speed a
 net-irc/weechat 2.0.1: Portable and multi-interface IRC client
 net-libs/zeromq 2.2.0 3.2.3 3.2.5 4.1.1 4.1.6 4.2.1 4.2.2-r2: A brokerless kernel
 sys-auth/ykpers 1.18.0: Library and tool for personalization of Yubico's YubiKey
+sys-fs/btrfs-progs 4.4.1 4.10.2: Btrfs filesystem utilities
 sys-kernel/dracut 044-r1 045-r2 046-r1: Generic initramfs generation tool
 sys-kernel/genkernel-next 66 68: Gentoo automatic kernel building scripts, reloaded
 x11-base/xorg-server 1.19.5-r2: X.Org X servers
