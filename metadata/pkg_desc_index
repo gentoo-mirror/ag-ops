@@ -8,5 +8,7 @@ dev-lua/say 1.3_p1: Lua String Hashing/Indexing Library
 net-irc/weechat 2.0.1: Portable and multi-interface IRC client
 sys-kernel/dracut 044-r1 045-r2 046-r1: Generic initramfs generation tool
 sys-kernel/genkernel-next 66 68: Gentoo automatic kernel building scripts, reloaded
+x11-base/xorg-server 1.19.5-r2: X.Org X servers
 x11-misc/awesome-freedesktop 0.4.0: Lua String Hashing/Indexing Library
+x11-misc/compton 0.1_beta2: A compositor for X, and a fork of xcompmgr-dana
 x11-wm/awesome 3.5.9-r2 4.2-r2: A dynamic floating and tiling window manager

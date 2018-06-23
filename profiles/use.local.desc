@@ -23,3 +23,15 @@ sys-kernel/genkernel-next:gpg - Enable support for GPG (include gnupg dependency
 sys-kernel/genkernel-next:iscsi - Enable support for open-iscsi (include open-iscsi dependency)
 sys-kernel/genkernel-next:mdadm - Enable support for mdadm (include mdadm dependency)
 sys-kernel/genkernel-next:plymouth - Enable support for Plymouth (include Plymouth dependency)
+x11-base/xorg-server:dmx - Build the Distributed Multiheaded X server
+x11-base/xorg-server:glamor - Enable Glamor OpenGL 2D acceleration
+x11-base/xorg-server:kdrive - Build the kdrive X servers
+x11-base/xorg-server:tslib - Build with tslib support for touchscreen devices
+x11-base/xorg-server:unwind - Enable libunwind usage for backtraces
+x11-base/xorg-server:xcsecurity - Build Security extension
+x11-base/xorg-server:xephyr - Build the Xephyr server
+x11-base/xorg-server:xnest - Build the Xnest server
+x11-base/xorg-server:xorg - Build the Xorg X server (HIGHLY RECOMMENDED)
+x11-base/xorg-server:xvfb - Build the Xvfb server
+x11-misc/compton:drm - Enable VSync with DRM_IOCTL_WAIT_VBLANK
+x11-misc/compton:opengl - Enable VSync with SGI_swap_control OpenGL extension
