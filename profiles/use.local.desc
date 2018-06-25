@@ -2,20 +2,7 @@
 # Please add your descriptions to your package's metadata.xml ONLY.
 # * generated automatically using pmaint *
 
-app-emulation/virtualbox-modules:pax_kernel - Apply patch needed for pax enabled kernels
 dev-lang/luajit:lua52compat - Enable some upwards-compatible features from Lua 5.2 that are unlikely to break existing code.
-dev-vcs/git:blksha1 - Use the new optimized SHA1 implementation
-dev-vcs/git:cgi - Install gitweb too
-dev-vcs/git:curl - Support fetching and pushing (requires webdav too) over http:// and https:// protocols
-dev-vcs/git:gpg - Pull in gnupg for signing -- without gnupg, attempts at signing will fail at runtime!
-dev-vcs/git:highlight - GitWeb support for app-text/highlight
-dev-vcs/git:mediawiki - Support pulling and pushing from MediaWiki
-dev-vcs/git:mediawiki-experimental - Add experimental patches for improved MediaWiki support
-dev-vcs/git:pcre-jit - Enable JIT for pcre
-dev-vcs/git:ppcsha1 - Make use of a bundled routine that is optimized for the PPC arch
-dev-vcs/git:subversion - Include git-svn for dev-vcs/subversion support
-dev-vcs/git:tk - Include the 'gitk' and 'git gui' tools
-dev-vcs/git:webdav - Adds support for push'ing to HTTP/HTTPS repositories via DAV
 net-irc/weechat:alias - Enable plugin for alias control
 net-irc/weechat:buflist - Enable buflist plugin
 net-irc/weechat:charset - Enable encoding conversions
@@ -28,30 +15,5 @@ net-irc/weechat:relay - Enable relay plugin (experimental)
 net-irc/weechat:scripts - Build infrastructure for scripting
 net-irc/weechat:trigger - Enable trigger plugin
 net-irc/weechat:xfer - Enable xfer plugin support
-net-libs/zeromq:drafts - Build draft API, which may change at any time without any notice, and is therefore not recommended for normal use.
-net-libs/zeromq:pgm - Build PGM (Pragmatic General Multicast)extention, a protocol for reliable multicast transport of data over IP networks.
-net-libs/zeromq:sodium - Use dev-libs/libsodium for cryptography
-sys-auth/ykpers:consolekit - Use sys-auth/consolekit and virtual/udev to allow access to the YubiKey HID device to the console user.
-sys-fs/btrfs-progs:convert - Build ext2 conversion utility (btrfs-convert)
-sys-fs/btrfs-progs:reiserfs - Enable reiserfs support in btrfs-convert tool.
-sys-fs/btrfs-progs:static - Build static binaries in addition to the dynamic ones
-sys-fs/btrfs-progs:zstd - Enable zstd compression support.
-sys-kernel/dracut:debug - Module installing additional tools like strace, file editor, ssh and more
-sys-kernel/genkernel-next:cryptsetup - Enable support for Luks disk enrcyption using sys-fs/cryptsetup
-sys-kernel/genkernel-next:dmraid - Enable support for DMRAID (include dmraid dependency)
-sys-kernel/genkernel-next:gpg - Enable support for GPG (include gnupg dependency)
-sys-kernel/genkernel-next:iscsi - Enable support for open-iscsi (include open-iscsi dependency)
-sys-kernel/genkernel-next:mdadm - Enable support for mdadm (include mdadm dependency)
-sys-kernel/genkernel-next:plymouth - Enable support for Plymouth (include Plymouth dependency)
-x11-base/xorg-server:dmx - Build the Distributed Multiheaded X server
-x11-base/xorg-server:glamor - Enable Glamor OpenGL 2D acceleration
-x11-base/xorg-server:kdrive - Build the kdrive X servers
-x11-base/xorg-server:tslib - Build with tslib support for touchscreen devices
-x11-base/xorg-server:unwind - Enable libunwind usage for backtraces
-x11-base/xorg-server:xcsecurity - Build Security extension
-x11-base/xorg-server:xephyr - Build the Xephyr server
-x11-base/xorg-server:xnest - Build the Xnest server
-x11-base/xorg-server:xorg - Build the Xorg X server (HIGHLY RECOMMENDED)
-x11-base/xorg-server:xvfb - Build the Xvfb server
 x11-misc/compton:drm - Enable VSync with DRM_IOCTL_WAIT_VBLANK
 x11-misc/compton:opengl - Enable VSync with SGI_swap_control OpenGL extension
