@@ -18,7 +18,8 @@ KEYWORDS="~amd64 ~arm ~ppc ~x86 ~amd64-linux ~x86-linux"
 S="${WORKDIR}/${MY_P}"
 
 HTML_DOCS=( doc/ )
-PATCHES=( "${FILESDIR}"/${PN}-luaver.patch )
+PATCHES=( "${FILESDIR}"/${PN}-luaver.patch
+		  "${FILESDIR}"/${PN}-nosymlinks.patch )
 
 src_install(){
 	default
