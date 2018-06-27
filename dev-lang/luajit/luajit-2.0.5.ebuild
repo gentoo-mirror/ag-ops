@@ -21,7 +21,7 @@ S="${WORKDIR}/${MY_P}"
 
 HTML_DOCS=( doc/ )
 PATCHES=( "${FILESDIR}"/${PN}-luaver.patch
-		  "${FILESDIR}"/${PN}-nosymlinks.patch )
+		  "${FILESDIR}"/${PN}-205.patch )
 
 src_install(){
 	default
