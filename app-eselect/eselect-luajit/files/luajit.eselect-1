@@ -7,7 +7,7 @@ inherit config multilib
 DESCRIPTION="Manage luajit symlinks"
 MAINTAINER="ilmostro7@gmail.com"
 
-HEADER_FILES="lauxlib.h luaconf.h lua.h lua.hpp luajit.h lualib.h"
+HEADER_FILES="luajit.h"
 
 remove_symlinks() {
 	unlink "${EROOT}"/usr/bin/{luajit} &>/dev/null 
@@ -66,7 +66,7 @@ resolv_target() {
 }
 
 get_active_version() {
-	readlink -e "${EROOT}"/usr/bin/luajit | sed -ne "s:.*/usr/bin/lua\([\d.-]*\):\1:p"
+	readlink -e "${EROOT}"/usr/bin/luajit | sed -ne "s:.*/usr/bin/luajit\([\d.-]*\):\1:p"
 }
 
 ## Actual actions
