@@ -8,6 +8,7 @@ DESCRIPTION="Manage luajit symlinks"
 MAINTAINER="ilmostro7@gmail.com"
 
 HEADER_FILES="luajit.h"
+LVER=$(readlink -e "${EROOT}"/usr/bin/luajit | sed -ne "s:.*/usr/bin/luajit\([\d.-]*\):\1:p")
 
 remove_symlinks() {
 	unlink "${EROOT}"/usr/bin/luajit &>/dev/null 
@@ -18,21 +19,22 @@ remove_symlinks() {
 	for f in $HEADER_FILES ; do
 		unlink "${EROOT}"/usr/include/$f
 	done
-	unlink "${EROOT}"/usr/share/man/man1/{luajit}.1{,.gz,.bz2,.lzma} &>/dev/null
+	unlink "${EROOT}"/usr/share/man/man1/luajit.1{,.gz,.bz2,.lzma} &>/dev/null
 }
 
 set_symlinks() {
 	local ver=$1
-	ln -s "${EROOT}"/usr/bin/luajit{$ver,}
+	ln -s "${EROOT}"/usr/bin/luajit-$ver "${EROOT}"/usr/bin/luajit
 	for dir in $(get_libdirs) ; do
-		ln -s "${dir}"/lua/${do_show}/luajit-{$ver}/libluajit{$ver}.so "${dir}"/libluajit{$ver,}.so
-		ln -s "${dir}"/pkgconfig/luajit{$ver,}.pc
+		ln -s "${dir}"/luajit-{$ver}/libluajit-$(LVER).so "${dir}"/libluajit.so
+		ln -s "${dir}"/luajit-{$ver}/libluajit-$(LVER).a "${dir}"/libluajit.a
+		ln -s "${dir}"/pkgconfig/luajit{-$ver,}.pc
 	done
 	for orig in "${EROOT}"/usr/share/man/man1/luajit-$ver.1* ; do
 		ln -s "${orig}" "${orig//$ver}"
 	done
 	for f in $HEADER_FILES ; do
-		ln -s "${EROOT}"/usr/include/luajit$ver/$f "${EROOT}"/usr/include
+		ln -s "${EROOT}"/usr/include/luajit-$ver/$f "${EROOT}"/usr/include
 	done
 }
 
@@ -50,7 +52,7 @@ get_libdirs() {
 find_targets() {
 	local dirs
 	local prefix="${EROOT}/usr/bin/luajit"
-	for f in ${prefix}2* ; do
+	for f in ${prefix}-2* ; do
 		dirs="${dirs} ${f##$prefix}"
 	done
 	echo $dirs
