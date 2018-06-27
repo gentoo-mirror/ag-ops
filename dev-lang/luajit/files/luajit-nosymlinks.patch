@@ -1,5 +1,5 @@
 diff --git a/Makefile b/Makefile
-index 85678ee..4d70d98 100644
+index 85678ee..1399d81 100644
 --- a/Makefile
 +++ b/Makefile
 @@ -32,7 +32,7 @@ DPREFIX= $(DESTDIR)$(PREFIX)
@@ -56,7 +56,7 @@ index 85678ee..4d70d98 100644
  INSTALL_X= install -m 0755
  INSTALL_F= install -m 0644
  UNINSTALL= $(RM)
-@@ -109,19 +107,16 @@ install: $(INSTALL_DEP)
+@@ -109,24 +107,21 @@ install: $(INSTALL_DEP)
  	$(MKDIR) $(INSTALL_DIRS)
  	cd src && $(INSTALL_X) $(FILE_T) $(INSTALL_T)
  	cd src && test -f $(FILE_A) && $(INSTALL_F) $(FILE_A) $(INSTALL_STATIC) || :
@@ -67,8 +67,9 @@ index 85678ee..4d70d98 100644
 -	  $(LDCONFIG) $(INSTALL_LIB) && \
 -	  $(SYMLINK) $(INSTALL_SONAME) $(INSTALL_SHORT1) && \
 -	  $(SYMLINK) $(INSTALL_SONAME) $(INSTALL_SHORT2) || :
+-	cd etc && $(INSTALL_F) $(FILE_MAN) $(INSTALL_MAN)
 +	  $(LDCONFIG) $(INSTALL_LIB) || :
- 	cd etc && $(INSTALL_F) $(FILE_MAN) $(INSTALL_MAN)
++	cd etc && $(INSTALL_F) $(FILE_MAN) $(INSTALL_MAN)/luajit-$(VERSION).1
  	cd etc && $(SED_PC) $(FILE_PC) > $(FILE_PC).tmp && \
  	  $(INSTALL_F) $(FILE_PC).tmp $(INSTALL_PC) && \
  	  $(RM) $(FILE_PC).tmp
@@ -78,3 +79,9 @@ index 85678ee..4d70d98 100644
  	@echo "==== Successfully installed LuaJIT $(VERSION) to $(PREFIX) ===="
  
  uninstall:
+ 	@echo "==== Uninstalling LuaJIT $(VERSION) from $(PREFIX) ===="
+-	$(UNINSTALL) $(INSTALL_TSYM) $(INSTALL_T) $(INSTALL_STATIC) $(INSTALL_DYN) $(INSTALL_SHORT1) $(INSTALL_SHORT2) $(INSTALL_MAN)/$(FILE_MAN) $(INSTALL_PC)
++	$(UNINSTALL) $(INSTALL_TSYM) $(INSTALL_T) $(INSTALL_STATIC) $(INSTALL_DYN) $(INSTALL_SHORT1) $(INSTALL_SHORT2) $(INSTALL_MAN)/$(FILE_MAN)/luajit-$(VERSION).1 $(INSTALL_PC)
+ 	for file in $(FILES_JITLIB); do \
+ 	  $(UNINSTALL) $(INSTALL_JITLIB)/$$file; \
+ 	  done

@@ -28,7 +28,7 @@ set_symlinks() {
 		ln -s "${dir}"/lua/${do_show}/luajit-{$ver}/libluajit{$ver}.so "${dir}"/libluajit{$ver,}.so
 		ln -s "${dir}"/pkgconfig/luajit{$ver,}.pc
 	done
-	for orig in "${EROOT}"/usr/share/man/man1/lua*$ver.1* ; do
+	for orig in "${EROOT}"/usr/share/man/man1/luajit-$ver.1* ; do
 		ln -s "${orig}" "${orig//$ver}"
 	done
 	for f in $HEADER_FILES ; do
