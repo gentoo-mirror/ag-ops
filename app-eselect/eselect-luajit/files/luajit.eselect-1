@@ -51,8 +51,8 @@ get_libdirs() {
 
 find_targets() {
 	local dirs
-	local prefix="${EROOT}/usr/bin/luajit"
-	for f in ${prefix}-2* ; do
+	local prefix="${EROOT}/usr/bin/luajit-"
+	for f in ${prefix}2* ; do
 		dirs="${dirs} ${f##$prefix}"
 	done
 	echo $dirs
