@@ -26,8 +26,8 @@ set_symlinks() {
 	local ver=$1
 	ln -s "${EROOT}"/usr/bin/luajit-$ver "${EROOT}"/usr/bin/luajit
 	for dir in $(get_libdirs) ; do
-		ln -s "${dir}"/luajit-{$ver}/libluajit-$(LVER).so "${dir}"/libluajit.so
-		ln -s "${dir}"/luajit-{$ver}/libluajit-$(LVER).a "${dir}"/libluajit.a
+		ln -s "${dir}"/luajit-{$ver}/libluajit-$LVER.so "${dir}"/libluajit.so
+		ln -s "${dir}"/luajit-{$ver}/libluajit-$LVER.a "${dir}"/libluajit.a
 		ln -s "${dir}"/pkgconfig/luajit{-$ver,}.pc
 	done
 	for orig in "${EROOT}"/usr/share/man/man1/luajit-$ver.1* ; do
@@ -51,8 +51,8 @@ get_libdirs() {
 
 find_targets() {
 	local dirs
-	local prefix="${EROOT}/usr/bin/luajit"
-	for f in ${prefix}-2* ; do
+	local prefix="${EROOT}/usr/bin/luajit-"
+	for f in ${prefix}2* ; do
 		dirs="${dirs} ${f##$prefix}"
 	done
 	echo $dirs
