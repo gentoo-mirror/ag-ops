@@ -24,14 +24,14 @@ remove_symlinks() {
 
 set_symlinks() {
 	local ver=$1
-	ln -s "${EROOT}"/usr/bin/luajit-$ver "${EROOT}"/usr/bin/luajit
+	ln -sf "${EROOT}"/usr/bin/luajit-$ver "${EROOT}"/usr/bin/luajit
 	for dir in $(get_libdirs) ; do
-		ln -s "${dir}"/luajit-{$ver}/libluajit-$LVER.so "${dir}"/libluajit.so
-		ln -s "${dir}"/luajit-{$ver}/libluajit-$LVER.a "${dir}"/libluajit.a
-		ln -s "${dir}"/pkgconfig/luajit{-$ver,}.pc
+		ln -sf "${dir}"/luajit-{$ver}/libluajit-$LVER.so "${dir}"/libluajit.so
+		ln -sf "${dir}"/luajit-{$ver}/libluajit-$LVER.a "${dir}"/libluajit.a
+		ln -sf "${dir}"/pkgconfig/luajit{-$ver,}.pc
 	done
-	for orig in "${EROOT}"/usr/share/man/man1/luajit-$ver.1* ; do
-		ln -s "${orig}" "${orig//$ver}"
+	for orig in "${EROOT}"/usr/share/man/man1/luajit*$ver.bz2 ; do
+		ln -s "${orig}" "${orig//-$ver}"
 	done
 	for f in $HEADER_FILES ; do
 		ln -s "${EROOT}"/usr/include/luajit-$ver/$f "${EROOT}"/usr/include
