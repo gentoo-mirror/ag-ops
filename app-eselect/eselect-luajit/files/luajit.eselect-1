@@ -10,7 +10,7 @@ MAINTAINER="ilmostro7@gmail.com"
 HEADER_FILES="luajit.h"
 
 remove_symlinks() {
-	unlink "${EROOT}"/usr/bin/{luajit} &>/dev/null 
+	unlink "${EROOT}"/usr/bin/luajit &>/dev/null 
 	for dir in $(get_libdirs) ; do
 		unlink "${EROOT}"${dir}/libluajit.so &>/dev/null && \
 		unlink "${EROOT}"${dir}/pkgconfig/luajit.pc &>/dev/null
@@ -25,7 +25,7 @@ set_symlinks() {
 	local ver=$1
 	ln -s "${EROOT}"/usr/bin/luajit{$ver,}
 	for dir in $(get_libdirs) ; do
-		ln -s "${dir}"/libluajit{$ver,}.so
+		ln -s "${dir}"/lua/${do_show}/luajit-{$ver}/libluajit{$ver}.so "${dir}"/libluajit{$ver,}.so
 		ln -s "${dir}"/pkgconfig/luajit{$ver,}.pc
 	done
 	for orig in "${EROOT}"/usr/share/man/man1/lua*$ver.1* ; do
