@@ -19,4 +19,12 @@ pkg_postinst() (
 	elog "chruby aims to be project-specific Ruby version changer. "
 	elog "For changing system default Ruby version use "
 	elog "app-eselect/eselect-ruby."
+	elog " "
+	elog "---------------------------------------- "
+	elog "Add the following lines to your ~/.bashrc for access to"
+	elog "alternate ruby versions installed with dev-ruby/ruby-install: "
+	elog " "
+	elog "[[ -f /usr/local/share/chruby/chruby.sh ]] && . /usr/local/share/chruby/chruby.sh"
+	elog "For auto-switching:"
+	elog "[[ -f /usr/local/share/chruby/auto.sh ]] && . /usr/local/share/chruby/auto.sh"
 )
