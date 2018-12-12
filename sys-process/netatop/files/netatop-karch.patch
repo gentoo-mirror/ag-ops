@@ -1,10 +1,12 @@
 diff --git a/module/Makefile b/module/Makefile
-index 6994666..b9255ee 100644
+index 6994666..4ef8a25 100644
 --- a/module/Makefile
 +++ b/module/Makefile
-@@ -2,12 +2,13 @@
+@@ -1,13 +1,14 @@
+ # Makefile for linking kernel modules
  MYMODULE = netatop
- KERNDIR  = /lib/modules/$(shell uname -r)/build
+-KERNDIR  = /lib/modules/$(shell uname -r)/build
++KERNDIR  = $(KERN_DIR)
  THISDIR  = $(shell pwd)
 +ARCH 	 = $(shell uname -m)
  
