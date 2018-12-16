@@ -7,11 +7,12 @@ inherit systemd toolchain-funcs user
 
 DESCRIPTION="torguard anonymous VPN - NOT related to TOR project"
 HOMEPAGE="https://torguard.net"
-SRC_URI="https://updates.torguard.biz/Software/Linux/torguard-latest-amd64-arch.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://updates.torguard.biz/Software/Linux/torguard-latest-amd64-arch.tar.gz -> ${P}.tar.gz
+		x86?	( https://updates.torguard.biz/Software/Linux/torguard-latest-i386-arch.tar.gz -> ${P}.tar.gz )"
 
 LICENSE="custom"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 RDEPEND="sys-apps/iproute2"
 DEPEND="${RDEPEND}"
@@ -28,13 +29,13 @@ pkg_setup() {
 src_unpack() {
 	default
 	cd "${S}" || die "Couldn't cd into the source directory ${S}"
-	# tar xpf ${PN}-v${PV}-amd64-arch.tar || die "tar failed"
+	# TODO: fix x86 installation :(
 	tar xpf ${PN}-v${PV}-amd64-arch.tar || die "tar failed"
 }
 
 src_install() {
-	fperms 0644 "${S}/${PN}-v${PV}-amd64-arch/*"
-	fperms 0755 "${S}/${PN}-v${PV}-amd64-arch/opt/${PN}/bin/*"
+	fperms 0644 "${S}/${PN}-v${PV}-amd64-arch/"
+	fperms 0755 "${S}/${PN}-v${PV}-amd64-arch/opt/${PN}/bin/"
 	fperms 0644 "${S}/${PN}-v${PV}-amd64-arch/opt/${PN}/bin/*.conf"
 	fperms 0644 "${S}/${PN}-v${PV}-amd64-arch/opt/${PN}/bin/*.desktop"
 	cp -R "${S}/${PN}-v${PV}-amd64-arch/" "${D}/" || die "Install failed"
