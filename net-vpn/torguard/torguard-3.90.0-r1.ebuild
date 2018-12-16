@@ -29,13 +29,13 @@ pkg_setup() {
 src_unpack() {
 	default
 	cd "${S}" || die "Couldn't cd into the source directory ${S}"
-	# tar xpf ${PN}-v${PV}-amd64-arch.tar || die "tar failed"
+	# TODO: fix x86 installation :(
 	tar xpf ${PN}-v${PV}-amd64-arch.tar || die "tar failed"
 }
 
 src_install() {
-	fperms 0644 "${S}/${PN}-v${PV}-amd64-arch/*"
-	fperms 0755 "${S}/${PN}-v${PV}-amd64-arch/opt/${PN}/bin/*"
+	fperms 0644 "${S}/${PN}-v${PV}-amd64-arch/"
+	fperms 0755 "${S}/${PN}-v${PV}-amd64-arch/opt/${PN}/bin/"
 	fperms 0644 "${S}/${PN}-v${PV}-amd64-arch/opt/${PN}/bin/*.conf"
 	fperms 0644 "${S}/${PN}-v${PV}-amd64-arch/opt/${PN}/bin/*.desktop"
 	cp -R "${S}/${PN}-v${PV}-amd64-arch/" "${D}/" || die "Install failed"
