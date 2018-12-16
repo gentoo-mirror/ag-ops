@@ -17,7 +17,9 @@ IUSE=""
 RDEPEND="sys-apps/iproute2"
 DEPEND="${RDEPEND}"
 
-S=${WORKDIR}/${PN}-v${PV}-amd64-arch
+# S=${WORKDIR}/${PN}-v${PV}-amd64-arch
+S="${WORKDIR}/${PN}-v${PV}-amd64-arch/${PN}-v${PV}-amd64-arch"
+# S=${WORKDIR}/${PN}-v${PV}-amd64-arch
 
 pkg_setup() {
 	# enewgroup <name> [gid]
@@ -28,17 +30,23 @@ pkg_setup() {
 
 src_unpack() {
 	default
-	cd "${S}" || die "Couldn't cd into the source directory ${S}"
+	# cd "${S}" || die "Couldn't cd into the source directory ${S}"
+	cd "${WORKDIR}/${PN}-v${PV}-amd64-arch" || die "Couldn't cd into the source directory ${S}"
 	# TODO: fix x86 installation :(
-	tar xpf ${PN}-v${PV}-amd64-arch.tar || die "tar failed"
+	# tar xpf ${PN}-v${PV}-amd64-arch.tar || die "tar failed"
+	unpack ./${PN}-v${PV}-amd64-arch.tar || die "tar failed"
 }
 
 src_install() {
-	fperms 0644 "${S}/${PN}-v${PV}-amd64-arch/"
-	fperms 0755 "${S}/${PN}-v${PV}-amd64-arch/opt/${PN}/bin/"
-	fperms 0644 "${S}/${PN}-v${PV}-amd64-arch/opt/${PN}/bin/*.conf"
-	fperms 0644 "${S}/${PN}-v${PV}-amd64-arch/opt/${PN}/bin/*.desktop"
-	cp -R "${S}/${PN}-v${PV}-amd64-arch/" "${D}/" || die "Install failed"
+	# cp -Rv "${S}/${PN}-v${PV}-amd64-arch/" "${D}/" || die "Install failed"
+	# cp -Rv "${S}/" "${DESTDIR%/}" || die "Install failed"
+	# cp -rv "${S}/" "${D}/" || die "Install failed"
+	cp -rv "${S}/" "${D}/" || die "Install failed"
+	# fperms 0644 "${S}/${PN}-v${PV}-amd64-arch/"
+	# fperms 0755 "${D}/opt/${PN}/"
+	# fperms 0644 "${D}/"
+	# fperms 0644 "${S}/${PN}-v${PV}-amd64-arch/opt/${PN}/bin/*.conf"
+	# fperms 0644 "${S}/${PN}-v${PV}-amd64-arch/opt/${PN}/bin/*.desktop"
 	# fperms 0644 *
 
 }
