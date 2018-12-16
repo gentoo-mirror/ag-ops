@@ -33,7 +33,11 @@ src_unpack() {
 }
 
 src_install() {
-	default
+	fperms 0644 "${S}/${PN}-v${PV}-amd64-arch/*"
+	fperms 0755 "${S}/${PN}-v${PV}-amd64-arch/opt/${PN}/bin/*"
+	fperms 0644 "${S}/${PN}-v${PV}-amd64-arch/opt/${PN}/bin/*.conf"
+	fperms 0644 "${S}/${PN}-v${PV}-amd64-arch/opt/${PN}/bin/*.desktop"
+	cp -R "${S}/${PN}-v${PV}-amd64-arch/" "${D}/" || die "Install failed"
 	# fperms 0644 *
 
 }
