@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2019 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -12,7 +12,8 @@ SRC_URI="https://updates.torguard.biz/Software/Linux/torguard-latest-amd64-arch.
 
 LICENSE="custom"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+# KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 IUSE=""
 RDEPEND="sys-apps/iproute2"
 DEPEND="${RDEPEND}"
@@ -38,10 +39,7 @@ src_unpack() {
 }
 
 src_install() {
-	# cp -Rv "${S}/${PN}-v${PV}-amd64-arch/" "${D}/" || die "Install failed"
-	# cp -Rv "${S}/" "${DESTDIR%/}" || die "Install failed"
-	# cp -rv "${S}/" "${D}/" || die "Install failed"
-	cp -rv "${S}/" "${D}/" || die "Install failed"
+	doins -r .
 	# fperms 0644 "${S}/${PN}-v${PV}-amd64-arch/"
 	# fperms 0755 "${D}/opt/${PN}/"
 	# fperms 0644 "${D}/"
