@@ -16,9 +16,9 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE=""
 RDEPEND="sys-apps/iproute2
-		net-vpn/openvpn
+		net-vpn/openvpn[iproute2]
 		dev-qt/qtwidgets
-		dev-qt/qtnetwork
+		dev-qt/qtnetwork[libproxy]
 		net-proxy/shadowsocks-libev"
 DEPEND="${RDEPEND}"
 
