@@ -18,7 +18,8 @@ IUSE=""
 RDEPEND="sys-apps/iproute2
 		net-vpn/openvpn
 		dev-qt/qtwidgets
-		dev-qt/qtnetwork"
+		dev-qt/qtnetwork
+		net-proxy/shadowsocks-libev"
 DEPEND="${RDEPEND}"
 
 # S=${WORKDIR}/${PN}-v${PV}-amd64-arch
