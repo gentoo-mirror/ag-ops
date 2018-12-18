@@ -16,7 +16,8 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE=""
 RDEPEND="sys-apps/iproute2
-		net-vpn/openvpn"
+		net-vpn/openvpn
+		dev-qt/qtwidgets"
 DEPEND="${RDEPEND}"
 
 # S=${WORKDIR}/${PN}-v${PV}-amd64-arch
@@ -43,6 +44,7 @@ src_install() {
 	doins -r "${S}/usr"
 
 	insinto /opt/${PN}/bin/
+	insopts -m755
 	doins -r "${S}/opt/${PN}/bin/${PN}"
 	doins "${S}/opt/${PN}/bin/openconnect"
 	doins "${S}/opt/${PN}/bin/vpnc-script"
