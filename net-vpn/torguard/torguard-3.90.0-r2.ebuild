@@ -16,7 +16,8 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE=""
 RDEPEND="sys-apps/iproute2
-		net-vpn/openvpn"
+		net-vpn/openvpn
+		dev-qt/qtwidgets"
 DEPEND="${RDEPEND}"
 
 # S=${WORKDIR}/${PN}-v${PV}-amd64-arch
