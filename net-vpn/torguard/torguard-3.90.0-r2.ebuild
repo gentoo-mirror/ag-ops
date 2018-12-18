@@ -43,6 +43,7 @@ src_install() {
 	doins -r "${S}/usr"
 
 	insinto /opt/${PN}/bin/
+	insopts -m755
 	doins -r "${S}/opt/${PN}/bin/${PN}"
 	doins "${S}/opt/${PN}/bin/openconnect"
 	doins "${S}/opt/${PN}/bin/vpnc-script"
