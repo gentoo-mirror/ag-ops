@@ -1,13 +1,13 @@
 BDEPEND=virtual/pkgconfig
 DEFINED_PHASES=install setup unpack
-DEPEND=sys-apps/iproute2 net-vpn/openvpn dev-qt/qtwidgets
+DEPEND=sys-apps/iproute2 net-vpn/openvpn dev-qt/qtwidgets dev-qt/qtnetwork
 DESCRIPTION=torguard anonymous VPN - NOT related to TOR project
 EAPI=7
 HOMEPAGE=https://torguard.net
 KEYWORDS=~amd64
 LICENSE=custom
-RDEPEND=sys-apps/iproute2 net-vpn/openvpn dev-qt/qtwidgets
+RDEPEND=sys-apps/iproute2 net-vpn/openvpn dev-qt/qtwidgets dev-qt/qtnetwork
 SLOT=0
 SRC_URI=https://updates.torguard.biz/Software/Linux/torguard-latest-amd64-arch.tar.gz -> torguard-3.90.0.tar.gz x86? ( https://updates.torguard.biz/Software/Linux/torguard-latest-i386-arch.tar.gz -> torguard-3.90.0.tar.gz )
 _eclasses_=multilib	b2f01ad412baf81650c23fcf0975fa33	systemd	47c677ae1d7b69031f11f630ac09f0d1	toolchain-funcs	f164325a2cdb5b3ea39311d483988861	user	8bc2845510e2109af75e3eeac607ec81
-_md5_=b9493433f43c9f112b66f0c75c86bd62
+_md5_=aa0fd4f492525b7280d72f6a352f4ecf
