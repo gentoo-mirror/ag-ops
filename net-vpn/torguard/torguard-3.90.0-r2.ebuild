@@ -40,17 +40,6 @@ src_unpack() {
 }
 
 src_install() {
-	# doins -r .
-	# fperms 0644 "${S}/${PN}-v${PV}-amd64-arch/"
-	# fperms 0755 "${D}/opt/${PN}/"
-	# fperms 0644 "${D}/"
-	# fperms 0644 "${S}/${PN}-v${PV}-amd64-arch/opt/${PN}/bin/*.conf"
-	# fperms 0644 "${S}/${PN}-v${PV}-amd64-arch/opt/${PN}/bin/*.desktop"
-	# fperms 0644 *
-	# fperms 0644 ${EROOT}
-	# fperms 0644 ${EROOT}/etc/sudoers.d/${PN}
-
-	# doins -r "${S}/usr/share" "${ED}/usr"
 	doins -r "${S}/usr"
 
 	insinto /opt/${PN}/bin/
@@ -64,5 +53,7 @@ src_install() {
 
 	# Let's use the system implementation of openvpn
 	dosym "/usr/sbin/openvpn" "${EROOT}/opt/${PN}/bin/openvpn_v2_4"
+	# dosym "/opt/${PN}/bin/${PN}" "/usr/bin/${PN}"
+	dosym "${EROOT}/opt/${PN}/bin/${PN}" "${EROOT}/usr/bin/${PN}"
 
 }
