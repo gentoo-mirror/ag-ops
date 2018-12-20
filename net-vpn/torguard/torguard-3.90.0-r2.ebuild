@@ -42,8 +42,15 @@ src_unpack() {
 	unpack ./${PN}-v${PV}-amd64-arch.tar || die "tar failed"
 }
 
+src_prepare() {
+	default
+	# We are not using the bundled libs
+	sed -i 's/^export.*$//' "${S}/opt/${PN}/bin/${PN}-wrapper"
+}
+
 src_install() {
 	doins -r "${S}/usr"
+	newbin "${S}/opt/${PN}/bin/${PN}-wrapper" "${PN}"
 
 	insinto /opt/${PN}/bin/
 	insopts -m755
@@ -57,7 +64,7 @@ src_install() {
 
 	# Let's use the system implementation of openvpn
 	dosym "/usr/sbin/openvpn" "${EROOT}/opt/${PN}/bin/openvpn_v2_4"
-	# dosym "/opt/${PN}/bin/${PN}" "/usr/bin/${PN}"
-	dosym "${EROOT}/opt/${PN}/bin/${PN}" "${EROOT}/usr/bin/${PN}"
+	# 20181219 - using the wrapper instead of using the binary directly
+	# dosym "${EROOT}/opt/${PN}/bin/${PN}" "${EROOT}/usr/bin/${PN}"
 
 }
