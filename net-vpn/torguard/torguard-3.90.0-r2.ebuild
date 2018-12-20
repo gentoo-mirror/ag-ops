@@ -66,5 +66,10 @@ src_install() {
 	dosym "/usr/sbin/openvpn" "${EROOT}/opt/${PN}/bin/openvpn_v2_4"
 	# 20181219 - using the wrapper instead of using the binary directly
 	# dosym "${EROOT}/opt/${PN}/bin/${PN}" "${EROOT}/usr/bin/${PN}"
+}
 
+pkg_postrm() {
+	default
+	userdel -r ${PN}
+	groupdel ${PN}
 }
