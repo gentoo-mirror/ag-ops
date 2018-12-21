@@ -14,12 +14,13 @@ LICENSE="custom"
 SLOT="0"
 # KEYWORDS="~amd64 ~x86"
 KEYWORDS="~amd64"
-IUSE=""
+IUSE="sudo"
 RDEPEND="sys-apps/iproute2
 		net-vpn/openvpn[iproute2]
 		dev-qt/qtwidgets
 		dev-qt/qtnetwork[libproxy]
-		net-proxy/shadowsocks-libev"
+		net-proxy/shadowsocks-libev
+		sudo? ( lxqt-base/lxqt-sudo )"
 DEPEND="${RDEPEND}"
 
 # S=${WORKDIR}/${PN}-v${PV}-amd64-arch
