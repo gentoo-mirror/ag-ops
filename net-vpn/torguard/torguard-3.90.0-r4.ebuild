@@ -69,8 +69,8 @@ src_install() {
 	# dosym "${EROOT}/opt/${PN}/bin/${PN}" "${EROOT}/usr/bin/${PN}"
 }
 
-pkg_postrm() {
-	default
-	userdel -r ${PN}
-	groupdel ${PN}
-}
+#pkg_postrm() {
+#	default
+#	userdel -r ${PN}
+#	groupdel ${PN}
+#}
