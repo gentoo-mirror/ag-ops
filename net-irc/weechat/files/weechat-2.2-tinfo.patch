@@ -2,7 +2,7 @@ Use pkgconfig to find ncurses libs in order to support separate libtinfo.
 
 --- weechat-2.1/src/gui/curses/normal/CMakeLists.txt
 +++ weechat-2.1/src/gui/curses/normal/CMakeLists.txt
-@@ -29,7 +29,13 @@
+@@ -32,7 +32,13 @@
    ../gui-curses-window.c
  )
  
@@ -17,7 +17,7 @@ Use pkgconfig to find ncurses libs in order to support separate libtinfo.
  if(NCURSES_FOUND)
    check_include_files(ncursesw/ncurses.h NCURSESW_HEADERS)
    if(NCURSESW_HEADERS)
-@@ -54,7 +60,7 @@
+@@ -57,7 +63,7 @@
  
  add_dependencies(${EXECUTABLE} weechat_gui_curses_normal)
  
