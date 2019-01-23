@@ -7,6 +7,7 @@ dev-lua/lpeg 1.0.1: Parsing Expression Grammars for Lua
 dev-lua/luafilesystem 1.5.0 1.6.3 1.7.0: File System Library for the Lua Programming Language
 dev-lua/penlight 1.3.2 1.5.4: Lua utility libraries loosely based on the Python standard libraries
 dev-lua/say 1.3_p1: Lua String Hashing/Indexing Library
+media-libs/opencv 3.4.1-r100: A collection of algorithms and sample code for various computer vision problems
 media-video/vlc 3.0.3-r1 3.0.3-r2 3.0.4-r1 3.0.6-r100: Media player and framework with support for most multimedia files and streaming
 net-irc/weechat 2.0.1 2.3-r4: Portable and multi-interface IRC client
 x11-misc/awesome-freedesktop 0.4.0: Lua String Hashing/Indexing Library
