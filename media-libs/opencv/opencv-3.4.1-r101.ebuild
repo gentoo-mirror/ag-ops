@@ -471,8 +471,7 @@ python_module_compile() {
 	mycmakeargs+=(
 		# cheap trick: python_setup sets one of them as a symlink
 		# to the correct interpreter, and the other to fail-wrapper
-		-DPYTHON2_EXECUTABLE=$(type -P python2)
-		-DPYTHON3_EXECUTABLE=$(type -P python3)
+		-DPYTHON_DEFAULT_EXECUTABLE=python
 		-DINSTALL_PYTHON_EXAMPLES=$(usex examples)
 		-DLIBPY_SUFFIX=64
 	)
