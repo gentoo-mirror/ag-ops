@@ -8,5 +8,5 @@ LICENSE=GPLv2
 RDEPEND=>=dev-lang/lua-5.1:* >=x11-wm/awesome-4.0:*
 SLOT=0
 SRC_URI=https://gitlab.com/ILMostro/awesome4-freedesktop/-/archive/master/awesome4-freedesktop-master.tar.gz
-_eclasses_=multilib	b2f01ad412baf81650c23fcf0975fa33	toolchain-funcs	b45201c4e6c096b98e250336954e64b9
+_eclasses_=multilib	1d91b03d42ab6308b5f4f6b598ed110e	toolchain-funcs	b45201c4e6c096b98e250336954e64b9
 _md5_=b8cc55102cdf5a5e73345fb0b0296e8d
