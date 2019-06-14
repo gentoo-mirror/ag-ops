@@ -14,7 +14,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
 IUSE=""
 
-RDEPEND="dev-lang/lua:0
+RDEPEND="dev-lang/lua:*
 	dev-libs/libevent:0="
 DEPEND="${RDEPEND}
 	virtual/pkgconfig"
