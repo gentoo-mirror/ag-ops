@@ -14,7 +14,7 @@ SLOT="0"
 KEYWORDS="amd64 ~arm arm64 ~ppc ~ppc64 x86"
 IUSE="selinux +suid"
 
-PATCHES=( "${FILESDIR}"/find-pkg-info.patch
+PATCHES=( "${FILESDIR}"/find-pkg-config.patch
 	"${FILESDIR}"/upstream-fix.patch )
 
 RDEPEND="
