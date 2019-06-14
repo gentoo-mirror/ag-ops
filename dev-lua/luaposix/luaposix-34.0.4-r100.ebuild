@@ -23,7 +23,7 @@ src_compile() {
 
 src_install() {
 	LUA_VERSION=$(readlink -e "${EROOT}"/usr/bin/lua | sed -ne 's:.*/usr/bin/lua\([\d.-]*\):\1:p')
-	LUA_LIBDIR="/usr/lib/lua/$LUA_VERSION"
+	LUA_LIBDIR="/usr/lib64/lua/$LUA_VERSION"
 
 	insinto "$LUA_LIBDIR"
 	insopts -m755
