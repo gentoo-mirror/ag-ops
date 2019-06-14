@@ -8,4 +8,4 @@ LICENSE=public-domain
 RDEPEND=dev-lang/lua:*
 SLOT=0
 SRC_URI=https://github.com/luaposix/luaposix/archive/release-v34.0.4.tar.gz -> luaposix-34.0.4.tar.gz
-_md5_=d705830830592732edbf58c3f7f996b6
+_md5_=0d5c6eb70f16c4befc2050a25c7d150a
