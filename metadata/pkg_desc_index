@@ -13,6 +13,5 @@ media-video/vlc 3.0.3-r1 3.0.3-r2 3.0.4-r1 3.0.6-r100 3.0.7.1-r100: Media player
 net-firewall/firewalld 0.5.1-r2 0.6.3 0.6.4-r100: A firewall daemon with D-BUS interface providing a dynamic firewall
 net-irc/weechat 2.0.1 2.3-r4: Portable and multi-interface IRC client
 sys-apps/bubblewrap 0.3.1-r100: Unprivileged sandboxing tool, namespaces-powered chroot-like solution
-x11-misc/awesome-freedesktop 0.4.0: Lua String Hashing/Indexing Library
 x11-misc/compton 0.1_beta2: A compositor for X, and a fork of xcompmgr-dana
 x11-wm/awesome 3.5.9-r2 4.2-r2: A dynamic floating and tiling window manager
