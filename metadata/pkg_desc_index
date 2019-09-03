@@ -15,7 +15,7 @@ dev-ruby/chruby 0.3.9 0.3.9-r1: Small script for changing current Ruby version i
 dev-ruby/ruby-install 0.6.1 0.7.0: Installs [Ruby], [JRuby], [Rubinius], [MagLev] or [mruby].
 media-libs/opencv 3.4.1-r101: A collection of algorithms and sample code for various computer vision problems
 media-tv/mythtv 29.1-r100: Homebrew PVR project
-media-video/vlc 3.0.3-r1 3.0.3-r2 3.0.4-r1 3.0.6-r100 3.0.7.1-r100 3.0.9999 9999: Media player and framework with support for most multimedia files and streaming
+media-video/vlc 3.0.6-r100 3.0.7.1-r100 3.0.8-r100 3.0.9999 9999: Media player and framework with support for most multimedia files and streaming
 net-firewall/firewalld 0.5.1-r2 0.6.3 0.6.4-r100: A firewall daemon with D-BUS interface providing a dynamic firewall
 net-irc/weechat 2.0.1 2.1 2.2-r2 2.3-r4 2.4-r100 2.5-r100 9999: Portable and multi-interface IRC client
 net-vpn/torguard 3.90.0-r4: torguard anonymous VPN - NOT related to TOR project
