@@ -7,8 +7,8 @@ inherit systemd toolchain-funcs user
 
 DESCRIPTION="torguard anonymous VPN - NOT related to TOR project"
 HOMEPAGE="https://torguard.net"
-SRC_URI="https://updates.torguard.biz/Software/Linux/torguard-latest-amd64-arch.tar.gz -> ${P}.tar.gz
-		x86?	( https://updates.torguard.biz/Software/Linux/torguard-latest-i386-arch.tar.gz -> ${P}.tar.gz )"
+SRC_URI="https://updates.torguard.biz/Software/Linux/torguard-${PV}-amd64-arch.tar.gz -> ${P}.tar.gz
+		x86?	( https://updates.torguard.biz/Software/Linux/torguard-${PV}-i386-arch.tar.gz -> ${P}.tar.gz )"
 
 LICENSE="custom"
 SLOT="0"
