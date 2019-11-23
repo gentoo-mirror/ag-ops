@@ -1,13 +1,13 @@
 DEFINED_PHASES=install prepare unpack
-DEPEND=sys-apps/iproute2 net-vpn/openvpn[iproute2] dev-qt/qtwidgets dev-qt/qtnetwork[libproxy] net-proxy/shadowsocks-libev sudo? ( lxqt-base/lxqt-sudo acct-user/torguard acct-group/torguard )
+DEPEND=sys-apps/iproute2 net-vpn/openvpn[iproute2] dev-qt/qtwidgets dev-qt/qtnetwork[libproxy] net-proxy/shadowsocks-libev sudo? ( lxqt-base/lxqt-sudo )
 DESCRIPTION=torguard anonymous VPN - NOT related to TOR project
 EAPI=7
 HOMEPAGE=https://torguard.net
 IUSE=sudo
 KEYWORDS=~amd64
 LICENSE=custom
-RDEPEND=sys-apps/iproute2 net-vpn/openvpn[iproute2] dev-qt/qtwidgets dev-qt/qtnetwork[libproxy] net-proxy/shadowsocks-libev sudo? ( lxqt-base/lxqt-sudo acct-user/torguard acct-group/torguard )
+RDEPEND=sys-apps/iproute2 net-vpn/openvpn[iproute2] dev-qt/qtwidgets dev-qt/qtnetwork[libproxy] net-proxy/shadowsocks-libev sudo? ( lxqt-base/lxqt-sudo )
 SLOT=0
 SRC_URI=https://updates.torguard.biz/Software/Linux/torguard-v3.96.0-amd64-arch.tar.gz -> torguard-3.96.0.tar.gz x86? ( https://updates.torguard.biz/Software/Linux/torguard-v3.96.0-i386-arch.tar.gz -> torguard-3.96.0.tar.gz )
 _eclasses_=multilib	1d91b03d42ab6308b5f4f6b598ed110e	toolchain-funcs	512eb3367f507ebaa1d1d43ab7d66e6c
-_md5_=469d791dbb353578722050ceec129a33
+_md5_=c51fa0ad2c78cc8725daa85ee3bfe7da
