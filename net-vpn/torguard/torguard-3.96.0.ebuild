@@ -20,9 +20,7 @@ RDEPEND="sys-apps/iproute2
 		dev-qt/qtwidgets
 		dev-qt/qtnetwork[libproxy]
 		net-proxy/shadowsocks-libev
-		sudo? ( lxqt-base/lxqt-sudo
-		acct-user/${PN}
-		acct-group/${PN} )"
+		sudo? ( lxqt-base/lxqt-sudo )"
 DEPEND="${RDEPEND}"
 
 # S=${WORKDIR}/${PN}-v${PV}-amd64-arch
