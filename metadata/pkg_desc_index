@@ -19,7 +19,7 @@ media-video/vlc 3.0.6-r100 3.0.7.1-r100 3.0.8-r100 3.0.8-r101 3.0.9999 9999: Med
 net-firewall/firewalld 0.5.1-r2 0.6.3 0.6.4-r100: A firewall daemon with D-BUS interface providing a dynamic firewall
 net-irc/weechat 2.4-r100 2.5-r100 2.6 2.7 9999: Portable and multi-interface IRC client
 net-vpn/torguard 3.90.0-r4 3.96.0: torguard anonymous VPN - NOT related to TOR project
-sys-apps/bubblewrap 0.3.1-r100: Unprivileged sandboxing tool, namespaces-powered chroot-like solution
+sys-apps/bubblewrap 0.3.1-r101: Unprivileged sandboxing tool, namespaces-powered chroot-like solution
 sys-process/netatop 2.0: Optional kernel module for sys-process/atop to gather statistics about TCP/UDP packets transmitted/received per process and per thread
 x11-misc/awesome-freedesktop 0.4.0: Lua String Hashing/Indexing Library
 x11-misc/compton 0.1_beta2 9999: A compositor for X, and a fork of xcompmgr-dana
