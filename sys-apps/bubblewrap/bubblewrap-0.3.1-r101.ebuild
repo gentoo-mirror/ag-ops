@@ -17,6 +17,8 @@ IUSE="selinux +suid"
 PATCHES=( "${FILESDIR}"/find-pkg-config.patch
 	"${FILESDIR}"/upstream-fix.patch )
 
+BDEPEND="sys-devel/automake:1.15"
+
 RDEPEND="
 	sys-libs/libseccomp
 	sys-libs/libcap
