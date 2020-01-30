@@ -18,8 +18,8 @@ SLOT=0
 # BDEPEND="dev-python/setuptools"
 RDEPEND="${PYTHON_DEPS}
 	dev-python/setuptools
-	dev-util/dialog[${PYTHON_USEDEP}]
-	net-vpn/openvpn[${PYTHON_USEDEP}]"
+	dev-util/dialog
+	net-vpn/openvpn"
 DEPEND="${RDEPEND}"
 
 S="${WORKDIR}/${PN}-ng-${PV}"
