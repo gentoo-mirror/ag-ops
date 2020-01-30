@@ -18,7 +18,7 @@ SLOT=0
 # BDEPEND="dev-python/setuptools"
 RDEPEND="${PYTHON_DEPS}
 	dev-python/setuptools
-	dev-util/dialog
+	dev-python/pythondialog
 	net-vpn/openvpn"
 DEPEND="${RDEPEND}"
 
