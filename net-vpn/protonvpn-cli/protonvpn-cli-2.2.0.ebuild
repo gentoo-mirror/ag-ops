@@ -15,14 +15,12 @@ LICENSE="MIT"
 KEYWORDS="amd64"
 SLOT=0
 
-# BDEPEND="dev-python/setuptools"
 RDEPEND="${PYTHON_DEPS}
 	dev-python/setuptools
-	dev-python/pythondialog
+	dev-python/pythondialog:0
 	net-vpn/openvpn"
 DEPEND="${RDEPEND}"
 
 S="${WORKDIR}/${PN}-ng-${PV}"
 
 DOCS=( CHANGELOG.md README.md USAGE.md )
-
