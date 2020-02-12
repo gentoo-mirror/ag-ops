@@ -1,9 +1,9 @@
-# Copyright 1999-2018 Gentoo Authors
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
 GNOME2_LA_PUNT="yes"
-PYTHON_COMPAT=( python{3_4,3_5,3_6,3_7} )
+PYTHON_COMPAT=( python{3_6,3_7} )
 
 inherit autotools eutils gnome2 multilib python-single-r1 virtualx
 
@@ -24,7 +24,10 @@ RDEPEND="
 	gtk? ( >=x11-libs/gtk+-3:3[introspection] )
 	python? (
 		${PYTHON_DEPS}
-		>=dev-python/pygobject-3.2:3[${PYTHON_USEDEP}] )
+		$(python_gen_cond_dep '
+			>=dev-python/pygobject-3.2:3[${PYTHON_MULTI_USEDEP}]
+		')
+	)
 "
 DEPEND="${RDEPEND}
 	dev-util/glib-utils
