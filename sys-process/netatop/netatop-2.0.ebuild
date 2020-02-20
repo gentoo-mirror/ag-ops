@@ -14,7 +14,8 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="pax_kernel"
-PATCHES="${FILESDIR}/netatop-karch.patch"
+PATCHES="${FILESDIR}/netatop-karch.patch
+${FILESDIR}/${P}-start_time.patch"
 
 CHOST_amd64=x86_64-unknown-linux-gnu
 CHOST_x86=i686-unknown-linux-gnu
