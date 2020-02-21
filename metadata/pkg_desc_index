@@ -18,7 +18,7 @@ media-libs/opencv 3.4.1-r101: A collection of algorithms and sample code for var
 media-tv/mythtv 29.1-r100 29.1-r101: Homebrew PVR project
 media-video/vlc 3.0.6-r100 3.0.7.1-r100 3.0.8-r100 3.0.8-r101 3.0.9999 9999: Media player and framework with support for most multimedia files and streaming
 net-firewall/firewalld 0.5.1-r2 0.6.3 0.6.4-r100: A firewall daemon with D-BUS interface providing a dynamic firewall
-net-irc/weechat 2.4-r100 2.5-r100 2.6 2.7 2.7-r100 9999: Portable and multi-interface IRC client
+net-irc/weechat 2.7 2.7-r100 2.7.1-r100 9999: Portable and multi-interface IRC client
 net-vpn/protonvpn-cli 2.2.0: A VPN command-line tool from protonvpn - python rewrite
 net-vpn/torguard 3.90.0-r4 3.96.0: torguard anonymous VPN - NOT related to TOR project
 sys-apps/bubblewrap 0.3.1-r101: Unprivileged sandboxing tool, namespaces-powered chroot-like solution
