@@ -3,9 +3,7 @@
 
 EAPI=7
 
-# PYTHON_COMPAT=( python3_{6,7} )
-# pythondialog only supports python3_6
-PYTHON_COMPAT=( python3_6 )
+PYTHON_COMPAT=( python3_{6,7,8} )
 
 DISTUTILS_USE_SETUPTOOLS=rdepend
 
