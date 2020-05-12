@@ -12,7 +12,7 @@ SRC_URI="https://github.com/awesomeWM/awesome-releases/raw/master/${P}.tar.xz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~ppc ~ppc64 ~x86"
-IUSE="dbus doc luajit test"
+IUSE="dbus doc gnome luajit test"
 RESTRICT="test"
 
 RDEPEND="(
