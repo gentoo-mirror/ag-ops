@@ -1,9 +1,9 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI="7"
 
-inherit cmake-utils desktop pax-utils versionator
+inherit cmake-utils desktop pax-utils
 
 DESCRIPTION="A dynamic floating and tiling window manager"
 HOMEPAGE="https://awesomewm.org/"
@@ -11,16 +11,17 @@ SRC_URI="https://github.com/awesomeWM/awesome-releases/raw/master/${P}.tar.xz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 ~arm ~ppc ~ppc64 ~x86 ~x86-fbsd"
-IUSE="dbus doc elibc_FreeBSD gnome luajit test"
+KEYWORDS="~amd64 ~arm ~ppc ~ppc64 ~x86"
+IUSE="dbus doc gnome luajit test"
+RESTRICT="test"
 
 RDEPEND="
 	>=dev-lang/lua-5.1:*
-	luajit? ( dev-lang/luajit:* )
+	luajit? ( dev-lang/luajit:2 )
 	dev-libs/glib:2
 	>=dev-libs/libxdg-basedir-1
 	>=dev-lua/lgi-0.8
-	x11-libs/cairo[xcb]
+	x11-libs/cairo[X,xcb(+)]
 	x11-libs/gdk-pixbuf:2
 	>=x11-libs/libxcb-1.6[xkb]
 	>=x11-libs/pango-1.19.3[introspection]
@@ -34,12 +35,11 @@ RDEPEND="
 	x11-libs/libxkbcommon[X]
 	>=x11-libs/libX11-1.3.99.901
 	dbus? ( >=sys-apps/dbus-1 )
-	elibc_FreeBSD? ( || ( dev-libs/libexecinfo >=sys-freebsd/freebsd-lib-10.0 ) )
 "
 
 # graphicsmagick's 'convert -channel' has no Alpha support, bug #352282
 DEPEND="${RDEPEND}
-	dev-ruby/asciidoctor
+	>=app-text/asciidoc-8.4.5
 	app-text/xmlto
 	dev-util/gperf
 	virtual/pkgconfig
@@ -132,7 +132,7 @@ pkg_postinst() {
 	elog "  https://bugs.gentoo.org/show_bug.cgi?id=440724"
 
 	for v in ${REPLACING_VERSIONS}; do
-		if [ "$(get_major_version ${v})" = "3" ]; then
+		if [ "$(ver_cut 1 ${v})" = "3" ]; then
 			elog "Awesome-4 introduced breaking changes. For release notes and porting guide see"
 			elog "https://awesomewm.org/apidoc/documentation/89-NEWS.md.html#v4 and"
 			elog "https://awesomewm.org/apidoc/documentation/17-porting-tips.md.html#v4"
