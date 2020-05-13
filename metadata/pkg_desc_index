@@ -23,6 +23,7 @@ net-irc/weechat 2.7 2.7-r100 2.7.1-r100 2.8-r100 9999: Portable and multi-interf
 net-vpn/protonvpn-cli 2.2.0 2.2.2 2.2.2-r100: A VPN command-line tool from protonvpn - python rewrite
 net-vpn/torguard 3.90.0-r4 3.96.0: torguard anonymous VPN - NOT related to TOR project
 sys-apps/bubblewrap 0.3.1-r101: Unprivileged sandboxing tool, namespaces-powered chroot-like solution
+sys-apps/dbus-broker 21 22 23-r100 9999: Linux D-Bus Message Broker
 sys-process/netatop 3.1: Optional atop kmod for TCP/UDP tx/rx stats per process and per thread
 x11-misc/awesome-freedesktop 0.4.0: Lua String Hashing/Indexing Library
 x11-misc/compton 0.1_beta2 9999: A compositor for X, and a fork of xcompmgr-dana
