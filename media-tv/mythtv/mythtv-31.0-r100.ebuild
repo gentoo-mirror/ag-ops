@@ -1,36 +1,34 @@
-# Copyright 1999-2019 Gentoo Authors
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
-PYTHON_COMPAT=( python2_7 )
+EAPI=7
+PYTHON_COMPAT=( python3_{6,7} )
 
-# git diff --relative=mythtv v0.27.6.. > ~/mythtv-0.27.6/patches/mythtv.patch
-BACKPORTS="d8a2db77f5731cf32c6d31127452391c6cf7f91f"
 MY_P=${P%_p*}
 MY_PV=${PV%_p*}
 
-inherit flag-o-matic python-single-r1 qmake-utils user readme.gentoo-r1 systemd vcs-snapshot
+inherit eutils flag-o-matic python-single-r1 qmake-utils user-info readme.gentoo-r1 systemd
 
 MYTHTV_BRANCH="fixes/29"
 
-DESCRIPTION="Homebrew PVR project"
+DESCRIPTION="OpenSource Media Center, with PVR capabilities"
 HOMEPAGE="https://www.mythtv.org"
-SRC_URI="https://github.com/MythTV/mythtv/archive/${BACKPORTS}.tar.gz -> ${PF}.tar.gz"
+SRC_URI="https://github.com/MythTV/mythtv/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="GPL-2"
 KEYWORDS="~amd64 ~x86"
 SLOT="0/${PV}"
 
 IUSE_INPUT_DEVICES="input_devices_joystick"
-IUSE="alsa altivec autostart bluray cec crystalhd debug dvb dvd egl fftw +hls \
-	ieee1394 jack lcd libass lirc mythlogserver perl pulseaudio python systemd +theora \
-	vaapi vdpau +vorbis +wrapper +xml xmltv +xvid zeroconf ${IUSE_INPUT_DEVICES}"
+IUSE="alsa altivec autostart bluray cec debug dvb dvd egl fftw +hls \
+	ieee1394 jack lcd libass lirc mythlogserver perl pulseaudio python systemd \
+	vaapi vdpau +wrapper +xml xmltv +xvid zeroconf ${IUSE_INPUT_DEVICES}"
 REQUIRED_USE="${PYTHON_REQUIRED_USE}
 	bluray? ( xml )
-	theora? ( vorbis )
 "
 
 COMMON="
+	acct-user/mythtv
 	dev-libs/glib:2
 	dev-qt/qtcore:5
 	dev-qt/qtdbus:5
@@ -73,7 +71,7 @@ COMMON="
 	egl? ( media-libs/mesa[egl] )
 	fftw? ( sci-libs/fftw:3.0= )
 	hls? (
-		<media-libs/libvpx-1.7.0:=
+		media-libs/libvpx
 		>=media-libs/x264-0.0.20111220:=
 	)
 	ieee1394? (
@@ -97,16 +95,14 @@ COMMON="
 	python? (
 		${PYTHON_DEPS}
 		dev-python/lxml
-		dev-python/mysql-python
-		dev-python/urlgrabber
+		dev-python/mysqlclient
+		dev-python/simplejson
 		dev-python/future
 		dev-python/requests-cache
 	)
 	systemd? ( sys-apps/systemd:= )
-	theora? ( media-libs/libtheora media-libs/libogg )
 	vaapi? ( x11-libs/libva:=[opengl] )
 	vdpau? ( x11-libs/libvdpau )
-	vorbis? ( >=media-libs/libvorbis-1.0 media-libs/libogg )
 	xml? ( >=dev-libs/libxml2-2.6.0 )
 	xvid? ( >=media-libs/xvid-1.1.0 )
 	zeroconf? (
@@ -127,7 +123,7 @@ RDEPEND="${COMMON}
 		x11-wm/evilwm
 	)
 	dvd? ( media-libs/libdvdcss )
-	xmltv? ( >=media-tv/xmltv-0.5.43 )
+	xmltv? ( >=media-tv/xmltv-0.6.1 )
 "
 DEPEND="${COMMON}
 	dev-lang/yasm
@@ -135,9 +131,9 @@ DEPEND="${COMMON}
 	x11-base/xorg-proto
 "
 
-S="${WORKDIR}/${PF}/mythtv"
+S="${WORKDIR}/${P}/mythtv"
 
-PATCHES="${FILESDIR}/${PN}-exiv2-fix"
+# PATCHES="${FILESDIR}/${PN}-exiv2-fix"
 
 DISABLE_AUTOFORMATTING="yes"
 DOC_CONTENTS="
@@ -156,12 +152,9 @@ Note that the systemd unit now restarts by default and logs
 to journald via the console at the notice verbosity.
 "
 
-MYTHTV_GROUPS="video,audio,tty,uucp"
 
 pkg_setup() {
 	python-single-r1_pkg_setup
-	enewuser mythtv -1 /bin/bash /home/mythtv ${MYTHTV_GROUPS}
-	usermod -a -G ${MYTHTV_GROUPS} mythtv
 }
 
 src_prepare() {
@@ -170,12 +163,6 @@ src_prepare() {
 	# Perl bits need to go into vender_perl and not site_perl
 	sed -e "s:pure_install:pure_install INSTALLDIRS=vendor:" \
 		-i "${S}"/bindings/perl/Makefile
-
-	# Fix up the version info since we are using the fixes/${PV} branch
-	echo "SOURCE_VERSION=\"v${MY_PV}\"" > "${S}"/VERSION
-	echo "BRANCH=\"${MYTHTV_BRANCH}\"" >> "${S}"/VERSION
-	echo "SOURCE_VERSION=\"${BACKPORTS}\"" > "${S}"/EXPORTED_VERSION
-	echo "BRANCH=\"${MYTHTV_BRANCH}\"" >> "${S}"/EXPORTED_VERSION
 
 	echo "setting.extra -= -ldconfig" >> "${S}"/programs/mythfrontend/mythfrontend.pro
 }
@@ -201,14 +188,11 @@ src_configure() {
 	myconf="${myconf} $(use_enable xvid libxvid)"
 	myconf="${myconf} --dvb-path=/usr/include"
 	myconf="${myconf} --enable-xrandr"
-	myconf="${myconf} --enable-xv"
 	myconf="${myconf} --enable-x11"
 	myconf="${myconf} --enable-nonfree"
 	myconf="${myconf} --enable-libmp3lame" # lame is not optional it is required for some broadcasts for silence detection of commercials
 	use cec || myconf="${myconf} --disable-libcec"
 	use zeroconf || myconf="${myconf} --disable-libdns-sd"
-	myconf="${myconf} $(use_enable theora libtheora)"
-	myconf="${myconf} $(use_enable vorbis libvorbis)"
 
 	if use hls; then
 		myconf="${myconf} --enable-libx264"
@@ -242,7 +226,6 @@ src_configure() {
 	# Video
 	myconf="${myconf} $(use_enable vdpau)"
 	myconf="${myconf} $(use_enable vaapi)"
-	myconf="${myconf} $(use_enable crystalhd)"
 
 	# Input
 	use input_devices_joystick || myconf="${myconf} --disable-joystick-menu"
@@ -337,9 +320,6 @@ src_install() {
 			chmod a+x "${file}"
 		fi
 	done
-
-	# Ensure that Python scripts are executed by Python 2
-	python_fix_shebang "${ED}/usr/share/mythtv"
 
 	# Make shell & perl scripts executable
 	find "${ED}" -type f -name '*.sh' -o -type f -name '*.pl' | \
