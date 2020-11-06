@@ -19,7 +19,7 @@ media-tv/mythtv 29.1-r101 31.0-r100: OpenSource Media Center, with PVR capabilit
 media-video/vlc 3.0.8-r101 3.0.10-r100 3.0.11.1-r100 3.0.9999 9999: Media player and framework with support for most multimedia files and streaming
 net-firewall/firewalld 0.5.1-r2 0.6.3 0.6.4-r100: A firewall daemon with D-BUS interface providing a dynamic firewall
 net-irc/weechat 2.8-r100 2.9-r100 9999: Portable and multi-interface IRC client
-net-vpn/protonvpn-cli 2.2.0 2.2.2 2.2.2-r100: A VPN command-line tool from protonvpn - python rewrite
+net-vpn/protonvpn-cli 2.2.2-r100 2.2.4-r100: A VPN command-line tool from protonvpn - python rewrite
 net-vpn/torguard 3.90.0-r4 3.96.0: torguard anonymous VPN - NOT related to TOR project
 sys-apps/bubblewrap 0.3.1-r101: Unprivileged sandboxing tool, namespaces-powered chroot-like solution
 sys-apps/dbus-broker 21 22 23-r100 9999: Linux D-Bus Message Broker
