@@ -3,16 +3,16 @@
 
 EAPI=7
 
-PYTHON_COMPAT=( python{3_6,3_7,3_8} )
+PYTHON_COMPAT=( python3_{7..9} )
 
-inherit cmake-utils python-single-r1 xdg-utils
+inherit cmake python-single-r1 xdg-utils
 
 if [[ ${PV} == "9999" ]] ; then
 	inherit git-r3
 	EGIT_REPO_URI="https://github.com/weechat/weechat.git"
 else
 	SRC_URI="https://weechat.org/files/src/${P}.tar.xz"
-	KEYWORDS="~amd64 ~arm ~ppc64 ~x86 ~x64-macos"
+	KEYWORDS="~amd64 ~arm ~arm64 ~ppc ~ppc64 ~x86 ~x64-macos"
 fi
 
 DESCRIPTION="Portable and multi-interface IRC client"
@@ -26,14 +26,19 @@ PLUGINS="+alias +buflist +charset +exec +fifo +fset +logger +relay +scripts +spe
 # dev-lang/v8 was dropped from Gentoo so we can't enable javascript support
 SCRIPT_LANGS="guile lua +perl php +python ruby tcl"
 LANGS=" cs de es fr it ja pl ru"
-IUSE="doc man nls +ssl test ${SCRIPT_LANGS} ${PLUGINS} ${INTERFACES} ${NETWORKS}"
-REQUIRED_USE="python? ( ${PYTHON_REQUIRED_USE} )"
+IUSE="doc man nls test ${SCRIPT_LANGS} ${PLUGINS} ${INTERFACES} ${NETWORKS}"
+
+REQUIRED_USE="
+	python? ( ${PYTHON_REQUIRED_USE} )
+	test? ( nls )
+"
 
 RDEPEND="
 	dev-libs/libgcrypt:0=
-	net-misc/curl[ssl]
+	net-libs/gnutls:=
 	sys-libs/ncurses:0=
-	sys-libs/zlib
+	sys-libs/zlib:=
+	net-misc/curl[ssl]
 	charset? ( virtual/libiconv )
 	guile? ( >=dev-scheme/guile-2.0 )
 	lua? ( dev-lang/lua:* )
@@ -41,11 +46,11 @@ RDEPEND="
 	perl? ( dev-lang/perl:= )
 	php? ( >=dev-lang/php-7.0:*[embed] )
 	python? ( ${PYTHON_DEPS} )
-	ruby? ( || ( dev-lang/ruby:2.6 dev-lang/ruby:2.5 dev-lang/ruby:2.4 ) )
-	ssl? ( net-libs/gnutls )
+	ruby? ( || ( dev-lang/ruby:2.7 dev-lang/ruby:2.6 dev-lang/ruby:2.5 ) )
 	spell? ( app-text/aspell )
 	tcl? ( >=dev-lang/tcl-8.4.15:0= )
 "
+
 DEPEND="${RDEPEND}
 	test? ( dev-util/cpputest )
 "
@@ -59,15 +64,14 @@ BDEPEND="
 
 DOCS="AUTHORS.adoc ChangeLog.adoc Contributing.adoc ReleaseNotes.adoc README.adoc"
 
-# tests need to be fixed to not use system plugins if weechat is already installed
-RESTRICT="test"
+RESTRICT="!test? ( test )"
 
 pkg_setup() {
 	use python && python-single-r1_pkg_setup
 }
 
 src_prepare() {
-	cmake-utils_src_prepare
+	cmake_src_prepare
 
 	# install only required translations
 	local i
@@ -115,7 +119,6 @@ src_configure() {
 		-DENABLE_EXEC=$(usex exec)
 		-DENABLE_FIFO=$(usex fifo)
 		-DENABLE_FSET=$(usex fset)
-		-DENABLE_GNUTLS=$(usex ssl)
 		-DENABLE_GUILE=$(usex guile)
 		-DENABLE_IRC=$(usex irc)
 		-DENABLE_LOGGER=$(usex logger)
@@ -135,12 +138,11 @@ src_configure() {
 		-DENABLE_TRIGGER=$(usex trigger)
 		-DENABLE_XFER=$(usex xfer)
 	)
+	cmake_src_configure
+}
 
-	if use python; then
-		python_is_python3 || mycmakeargs+=( -DENABLE_PYTHON2=ON )
-	fi
-
-	cmake-utils_src_configure
+src_test() {
+		cmake_src_test -V
 }
 
 pkg_postinst() {
