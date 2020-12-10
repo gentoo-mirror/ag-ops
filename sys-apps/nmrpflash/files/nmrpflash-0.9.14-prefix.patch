@@ -1,0 +1,11 @@
+diff --git a/Makefile b/Makefile
+index 4f41419..81ef464 100644
+--- a/Makefile
++++ b/Makefile
+@@ -1,5 +1,5 @@
+ CC ?= gcc
+-PREFIX ?= /usr/local
++PREFIX ?= /usr
+ VERSION = $(shell git describe --always | tail -c +2)
+ LIBS = -lpcap
+ CFLAGS += -Wall -g -DNMRPFLASH_VERSION=\"$(VERSION)\"
