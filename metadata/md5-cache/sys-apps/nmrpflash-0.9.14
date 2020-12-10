@@ -1,0 +1,11 @@
+DEFINED_PHASES=-
+DEPEND=net-libs/libpcap dev-libs/libnl:3
+DESCRIPTION=Tool for flashing Netgear firmware images to routers and compatible devices.
+EAPI=7
+HOMEPAGE=https://github.com/jclehner/nmrpflash
+KEYWORDS=~amd64 ~x86
+LICENSE=GPLv3
+RDEPEND=net-libs/libpcap dev-libs/libnl:3
+SLOT=0
+SRC_URI=https://github.com/jclehner/nmrpflash/archive/v0.9.14.tar.gz -> nmrpflash-0.9.14.tar.gz
+_md5_=87b5ca9b5fdd96c0c68e80a166f9dcb7
