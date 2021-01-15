@@ -26,5 +26,4 @@ sys-apps/dbus-broker 21 22 23-r100 9999: Linux D-Bus Message Broker
 sys-apps/nmrpflash 0.9.14: Tool for flashing Netgear firmware images to routers and compatible devices.
 sys-process/netatop 3.1: Optional atop kmod for TCP/UDP tx/rx stats per process and per thread
 x11-misc/awesome-freedesktop 0.4.0: Lua String Hashing/Indexing Library
-x11-misc/compton 0.1_beta2 9999: A compositor for X, and a fork of xcompmgr-dana
 x11-wm/awesome 3.5.9-r100 4.2-r100 4.3-r102 9999: A dynamic floating and tiling window manager
