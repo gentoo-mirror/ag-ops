@@ -7,22 +7,6 @@ dev-db/redis:tcmalloc - Use tcmalloc from dev-util/google-perftools for allocati
 dev-lang/luajit:lua52compat - Enable some upwards-compatible features from Lua 5.2 that are unlikely to break existing code.
 dev-libs/libpeas:glade - Install the glade catalog
 dev-libs/libpeas:python - Build support for loading dev-lang/python plugins
-media-libs/opencv:contrib - Install user contributed scripts from opencv_contrib (Experimental!)
-media-libs/opencv:contrib_cvv - CVV module requires Qt5
-media-libs/opencv:contrib_dnn - DNN module contrib requires tiny dnn
-media-libs/opencv:contrib_hdf - HDF module requires sci-libs/hdf5
-media-libs/opencv:contrib_sfm - SFM module requires eigen, gflags, and glog
-media-libs/opencv:contrib_xfeatures2d - Enables xfeatures2d and autodownload of samples in contrib
-media-libs/opencv:cuda - Enable NVIDIA Cuda computations support (Experimental!)
-media-libs/opencv:dnn_samples - Download dnn caffeemodel samples
-media-libs/opencv:eigen - Enable usage of dev-cpp/eigen for computations
-media-libs/opencv:gdal - Enable support for sci-libs/gdal library
-media-libs/opencv:gflags - Use Google's C++ argument parsing library
-media-libs/opencv:glog - Use Google's C++ loggin library
-media-libs/opencv:opencl - Add support for OpenCL
-media-libs/opencv:tesseract - Use Google's OCR Engine
-media-libs/opencv:testprograms - Build and install programs for testing OpenCV (performance)
-media-libs/opencv:vtk - Build new 3D visualization module viz based on sci-libs/vtk
 media-tv/mythtv:alsa - Allows MythTV to directly output sound to ALSA devices, this is needed if you are using ALSA dmix or SPDIF. Note, you will have to physically type your device into the MythTV configuration since it will only give you /dev/dsp devices in the drop down.
 media-tv/mythtv:altivec - Builds ffmpeg's codec libraries with altivec support.
 media-tv/mythtv:autostart - Uses a custom autostart configuration gleaned from experience with MythTV since its early versions and discussed with other MythTV maintainers and users. Does not rely on KDE being installed like most methods do.
@@ -94,7 +78,6 @@ media-video/vlc:wma-fixed - Enable fixed point WMA decoder
 media-video/vlc:x265 - Support X265 Encoder
 media-video/vlc:zeroconf - Enable support for zero-configuration networking via avahi
 media-video/vlc:zvbi - Enable support for teletext subtitles via the zvbi library
-net-firewall/firewalld:gui - Builds and installs GUI configurator and GTK+ applet
 net-irc/weechat:alias - Enable plugin for alias control
 net-irc/weechat:buflist - Enable buflist plugin
 net-irc/weechat:charset - Enable encoding conversions
@@ -108,5 +91,3 @@ net-irc/weechat:scripts - Build infrastructure for scripting
 net-irc/weechat:trigger - Enable trigger plugin
 net-irc/weechat:xfer - Enable xfer plugin support
 sys-apps/dbus-broker:launcher - dbus-daemon compatibility launcher
-x11-misc/compton:drm - Enable VSync with DRM_IOCTL_WAIT_VBLANK
-x11-misc/compton:opengl - Enable VSync with SGI_swap_control OpenGL extension

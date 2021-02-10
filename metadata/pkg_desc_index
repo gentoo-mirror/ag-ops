@@ -16,7 +16,6 @@ dev-ruby/chruby 0.3.9 0.3.9-r1: Small script for changing current Ruby version i
 dev-ruby/ruby-install 0.6.1 0.7.0: Installs [Ruby], [JRuby], [Rubinius], [MagLev] or [mruby].
 media-tv/mythtv 31.0-r101: OpenSource Media Center, with PVR capabilities
 media-video/vlc 3.0.8-r101 3.0.10-r100 3.0.11.1-r100 3.0.9999 9999: Media player and framework with support for most multimedia files and streaming
-net-firewall/firewalld 0.5.1-r2 0.6.3 0.6.4-r100: A firewall daemon with D-BUS interface providing a dynamic firewall
 net-irc/weechat 2.9-r101 3.0-r100 9999: Portable and multi-interface IRC client
 net-vpn/protonvpn-cli 2.2.2-r101 2.2.4-r101: A VPN command-line tool from protonvpn - python rewrite
 net-vpn/torguard 3.90.0-r4 3.96.0: torguard anonymous VPN - NOT related to TOR project
