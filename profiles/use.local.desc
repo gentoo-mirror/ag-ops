@@ -5,8 +5,6 @@
 dev-db/redis:jemalloc - Use dev-libs/jemalloc for allocations.
 dev-db/redis:tcmalloc - Use tcmalloc from dev-util/google-perftools for allocations.
 dev-lang/luajit:lua52compat - Enable some upwards-compatible features from Lua 5.2 that are unlikely to break existing code.
-dev-libs/libpeas:glade - Install the glade catalog
-dev-libs/libpeas:python - Build support for loading dev-lang/python plugins
 media-tv/mythtv:alsa - Allows MythTV to directly output sound to ALSA devices, this is needed if you are using ALSA dmix or SPDIF. Note, you will have to physically type your device into the MythTV configuration since it will only give you /dev/dsp devices in the drop down.
 media-tv/mythtv:altivec - Builds ffmpeg's codec libraries with altivec support.
 media-tv/mythtv:autostart - Uses a custom autostart configuration gleaned from experience with MythTV since its early versions and discussed with other MythTV maintainers and users. Does not rely on KDE being installed like most methods do.
