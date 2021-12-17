@@ -17,7 +17,7 @@ media-video/vlc 3.0.8-r101 3.0.12.1-r100 9999: Media player and framework with s
 net-irc/weechat 2.9-r101 3.0-r100 9999: Portable and multi-interface IRC client
 net-vpn/protonvpn-cli 2.2.2-r101 2.2.4-r101 2.2.6: A VPN command-line tool from protonvpn - python rewrite
 net-vpn/torguard 3.90.0-r4 3.96.0: torguard anonymous VPN - NOT related to TOR project
-sci-mathematics/mathematica 10.3.1-r1 12.1.0 12.1.1-r1 12.3.1: Wolfram Mathematica
+sci-mathematics/mathematica 12.3.1: Wolfram Mathematica
 sys-apps/bubblewrap 0.3.1-r101: Unprivileged sandboxing tool, namespaces-powered chroot-like solution
 sys-apps/dbus-broker 21 22 23-r100 9999: Linux D-Bus Message Broker
 sys-apps/nmrpflash 0.9.14: Tool for flashing Netgear firmware images to routers and compatible devices.
