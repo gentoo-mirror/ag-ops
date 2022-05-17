@@ -7,5 +7,5 @@ KEYWORDS=~amd64 ~arm ~ppc ~x86 ~amd64-linux ~x86-linux
 LICENSE=MIT
 SLOT=2.0.3-r1
 SRC_URI=http://luajit.org/download/LuaJIT-2.0.3.tar.gz
-_eclasses_=edos2unix	33e347e171066657f91f8b0c72ec8773	strip-linguas	ac3ee41ee2d31d8c41a77c0838320cc7	wrapper	4a1902f969e5718126434fc35f3a0d9c	eutils	dab5d8ec471d025b79c9e6906bcf3bff	multilib	4a33c9008e5ee30cb8840a3fdc24df2b	toolchain-funcs	fd9cde67030b26e479eeadaced488253	pax-utils	91d47e5d20627c717aa878b9167c62a8
+_eclasses_=edos2unix	33e347e171066657f91f8b0c72ec8773	strip-linguas	ac3ee41ee2d31d8c41a77c0838320cc7	wrapper	4a1902f969e5718126434fc35f3a0d9c	eutils	dab5d8ec471d025b79c9e6906bcf3bff	multilib	4fbbbc98f236f1b43acd99476bc3cd85	toolchain-funcs	fd9cde67030b26e479eeadaced488253	pax-utils	91d47e5d20627c717aa878b9167c62a8
 _md5_=fea7bc83ea2484edcb2201736dedabc4
