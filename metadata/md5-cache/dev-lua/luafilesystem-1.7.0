@@ -10,5 +10,5 @@ LICENSE=MIT
 RDEPEND=!luajit? ( >=dev-lang/lua-5.1 ) luajit? ( dev-lang/luajit:* )
 SLOT=0
 SRC_URI=https://github.com/keplerproject/luafilesystem/archive/v1_7_0.tar.gz -> luafilesystem-1.7.0.tar.gz
-_eclasses_=toolchain-funcs	37a4612ce5522df5a100359a8dbc8491	multilib	5ca4e49abed8e3a2f7b56920eadee157
+_eclasses_=toolchain-funcs	ec8bbc28394c7305b43ea07164bd8f5f	multilib	5ca4e49abed8e3a2f7b56920eadee157
 _md5_=3c8cbde64411d6fa7ccf4bcb9773807e
