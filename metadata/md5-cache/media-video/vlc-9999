@@ -11,5 +11,5 @@ RDEPEND=net-dns/libidn:= sys-libs/zlib:0[minizip] virtual/libintl:0 virtual/open
 REQUIRED_USE=chromecast? ( encode ) directx? ( ffmpeg ) fontconfig? ( truetype ) libcaca? ( X ) libtar? ( skins ) libtiger? ( kate ) postproc? ( ffmpeg ) skins? ( qt5 truetype X xml ) ssl? ( gcrypt ) vaapi? ( ffmpeg X ) vdpau? ( ffmpeg X )
 RESTRICT=!test? ( test )
 SLOT=0/5-9
-_eclasses_=eqawarn	c9847c43b3253a276ae2eabddedab3d7	gnuconfig	b6b3e92f8b8c996400074b5f61a59256	toolchain-funcs	e56c7649b804f051623c8bc1a1c44084	multilib	c19072c3cd7ac5cb21de013f7e9832e0	libtool	5f49a16f67f81bdf873e3d1f10b10001	autotools	3af8f60c4bdb23e738db506a630898ee	flag-o-matic	288c54efeb5e2aa70775e39032695ad4	xdg-utils	baea6080dd821f5562d715887954c9d3	gnome2-utils	30dbce54b89e77b86f366548f94419ad	virtualx	817571665ee28575da44ee08135089e5	git-r3	86fa1f157b70b9d2ff340c4633b1cf4b
+_eclasses_=eqawarn	c9847c43b3253a276ae2eabddedab3d7	gnuconfig	b6b3e92f8b8c996400074b5f61a59256	toolchain-funcs	e56c7649b804f051623c8bc1a1c44084	multilib	c19072c3cd7ac5cb21de013f7e9832e0	libtool	5f49a16f67f81bdf873e3d1f10b10001	autotools	3af8f60c4bdb23e738db506a630898ee	flag-o-matic	288c54efeb5e2aa70775e39032695ad4	xdg-utils	baea6080dd821f5562d715887954c9d3	gnome2-utils	30dbce54b89e77b86f366548f94419ad	virtualx	817571665ee28575da44ee08135089e5	git-r3	fbb2889c81f3a05910c1524db69425c1
 _md5_=8a702bfcbfb9d6af51f712aa0dd5d5ca
