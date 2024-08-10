@@ -10,5 +10,5 @@ LICENSE=custom
 RDEPEND=sys-apps/iproute2 net-vpn/openvpn[iproute2] dev-qt/qtwidgets dev-qt/qtnetwork[libproxy] net-proxy/shadowsocks-libev sudo? ( lxqt-base/lxqt-sudo )
 SLOT=0
 SRC_URI=https://updates.torguard.biz/Software/Linux/torguard-v3.96.0-amd64-arch.tar.gz -> torguard-3.96.0.tar.gz x86? ( https://updates.torguard.biz/Software/Linux/torguard-v3.96.0-i386-arch.tar.gz -> torguard-3.96.0.tar.gz )
-_eclasses_=toolchain-funcs	e7e7331166166e7a516d19e264b098c2	multilib	c19072c3cd7ac5cb21de013f7e9832e0
+_eclasses_=toolchain-funcs	0c713337f7872f1a002cecaaea9bef73	multilib	c19072c3cd7ac5cb21de013f7e9832e0
 _md5_=c51fa0ad2c78cc8725daa85ee3bfe7da
