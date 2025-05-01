@@ -3,7 +3,6 @@ dev-lua/lpeg 1.0.1 1.0.2-r111 1.0.2-r112: Parsing Expression Grammars for Lua
 dev-lua/luaevent 0.4.4 0.4.6 0.4.6-r100: libevent bindings for Lua
 dev-lua/luaposix 33.4.0 34.0.4-r100: Bindings for POSIX APIs
 dev-lua/luasocket 3.0_rc1-r104 3.0_rc1-r105: Networking support library for the Lua language
-dev-python/pythondialog 3.4.0 3.5.1-r100: A Python module for making simple text/console-mode user interfaces
 dev-ruby/chruby 0.3.9 0.3.9-r1: Small script for changing current Ruby version in shell.
 dev-ruby/ruby-install 0.6.1 0.7.0: Installs [Ruby], [JRuby], [Rubinius], [MagLev] or [mruby].
 media-video/vlc 3.0.8-r101 3.0.12.1-r100 9999: Media player and framework with support for most multimedia files and streaming
